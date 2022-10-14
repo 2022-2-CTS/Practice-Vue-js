@@ -1,23 +1,30 @@
+
+
 <template>
-  <div>
-    
-    <button class="button" v-on:click="likecnt++">khkh</button> 
-    <span>ÁÁ¾Æ¿ä : {{likecnt}}</span>
-    <button class="button" @click="dislikecnt++">½È¾î¿ä</button> 
-    <span>½È¾î¿ä : {{dislikecnt}}</span>
+  <div id="app">
+    <b>My First Web App</b>
+  <div class="num" v-for="count in 4" :key="count">
+      <button @click="handle_toggle" type="button">
+      <h1>ë©”ëª¨{{count}}</h1>
+      <p><b>ë‚´ìš©{{count}}</b></p>
+      </button>
+  </div>
+
+     
+
   </div>
 </template>
 
 
-
 <script>
   export default {
-    name: 'InitMain',
-    props: {
-      msg: String
+  methods:{
+    handle_toggle: function(){ 
+      this.$router.push("/detail");
     }
-  }
-  </script>
+}
+}
+</script>
 
 <style>
   .button{
